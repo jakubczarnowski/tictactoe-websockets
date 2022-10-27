@@ -12,6 +12,7 @@ const HomePage = (props: Props) => {
 		const roomId = Math.random().toString(36).slice(2, 7);
 		navigate(`/game/${roomId}`);
 	};
+
 	return (
 		<Flex alignItems={"center"} justifyContent={"center"} flex={1} direction="column">
 			<ScaleFade transition={{ enter: { duration: 0.7 } }} initialScale={0.5} in={true}>
