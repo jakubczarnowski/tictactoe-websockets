@@ -81,7 +81,7 @@ const GamePage = (props: Props) => {
 						return (
 							<Flex key={i} flex={1} flexDirection="row" gap={3}>
 								{row.map((tile, j) => (
-									<Tile key={`${i}${j}`} tile={tile} onClick={() => game.pickTile(i, j)} />
+									<Tile key={`${i}${j}`} gameResult={game.gameResult} tile={tile} onClick={() => game.pickTile(i, j)} />
 								))}
 							</Flex>
 						);

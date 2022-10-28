@@ -1,13 +1,15 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
+import GameResult from "../types/GameResult";
 import ITile from "../types/Tile";
 
 type Props = {
 	tile: ITile;
 	onClick: () => void;
+	gameResult: GameResult;
 };
 
-const Tile = ({ tile, onClick }: Props) => {
+const Tile = ({ tile, onClick, gameResult }: Props) => {
 	return (
 		<Box
 			sx={{
@@ -25,7 +27,7 @@ const Tile = ({ tile, onClick }: Props) => {
 			_hover={{ transform: "scale(105%)" }}
 			_active={{ transform: "scale(95%)" }}
 			onClick={() => {
-				if (tile === ITile.NONE) {
+				if (tile === ITile.NONE && gameResult === GameResult.PLAYING) {
 					onClick();
 				}
 			}}
